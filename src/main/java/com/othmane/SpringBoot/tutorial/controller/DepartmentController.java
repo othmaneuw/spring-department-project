@@ -1,6 +1,7 @@
 package com.othmane.SpringBoot.tutorial.controller;
 
 import com.othmane.SpringBoot.tutorial.entity.Department;
+import com.othmane.SpringBoot.tutorial.error.DepartmentNotFoundException;
 import com.othmane.SpringBoot.tutorial.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -29,7 +30,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         LOGGER.info("inside fetchDepartmentById");
         return departmentService.fetchDepartmentById(departmentId);
     }
