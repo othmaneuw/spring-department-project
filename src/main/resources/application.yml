@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+      show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jbcapp
+    username: postgres
+    password: dimawydad
+welcome:
+  message: hello Everybody !!!
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+
+
+
